@@ -42,11 +42,6 @@ Python 3.6
 | Exit application | Enter: ex |   Exit the current navigation stage |
 
 
-
-## Live link
-
-
-
 ## License
 MIT licence
 
