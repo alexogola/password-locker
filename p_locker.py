@@ -46,7 +46,7 @@ def main():
     # print("\033[1;35;1m Log -> To log in\n")
     # print("\033[1;35;1m ex -> Exit\n")
     while True:
-        print("Use these short codes : \n cc - create an account\n dc - display username\n fc - find a user\n ex - exit the user list ")
+        print("Use these short codes : \n cc - create an account\n dc - print a list of saved credentials\n fc - find a user\n ex - exit navigation ")
         print(" ")
         short_code = input('Enter : ').lower().strip()
         if short_code == 'cc':
