@@ -18,7 +18,7 @@ def find_user(account):
     '''
     Function to find user
     '''
-    def find_user(account):
+    return User.find_by_account(account)
 #To check existing user
 def check_existing_user(account):
     '''
