@@ -9,7 +9,7 @@ Alex Ogola
 
 ## Technology used
 
-
+Python 3.6
 
 ## Project setup installation
 
@@ -26,6 +26,8 @@ Alex Ogola
 6.Type git clone, and then paste the URL you copied in Step 2.
 
 7.Press Enter. Your local clone will be created.
+
+8.Have python3.6 is installed on your machine
 
 ## Behaviour driven development
 | Behaviour   |      Input     |  Output |
