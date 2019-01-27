@@ -34,11 +34,8 @@ Python 3.6
 |----------|:-------------:|------:|
 | Display codes for navigation| In terminal: $./p_locker.py |   Welcome, please enter your name |
 | Display prompt for creating an account | Enter: cc |   Enter your first name, last name and password |
-| Display a list of credentials | Enter: dc |   Prints a list of saved credentials |
-| Display prompt for login in | Enter: li |   Enter your account name and password |
-| Display codes for navigation | Successful login |   Choose an option: cc - Create Credential, dc - Display Credentials, copy - Copy Credential, ex - exit |
 | Display prompt for creating a credential | Enter: cc |   Enter the site name, your username and password |
-| Display prompt for which credential to copy | Enter: copy |   Enter the site name of the credential you wish to copy |
+| Display a list of credentials | Enter: dc |   Prints a list of saved credentials |
 | Exit application | Enter: ex |   Exit the current navigation stage |
 
 
