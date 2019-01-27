@@ -1,6 +1,6 @@
 # Password Locker
 
-Password locker is a simple python app that generates and stores passwords for different user accounts.
+Password Locker is an application that helps users generate and store passwords on their multiple accounts. The password locker runs on the terminal and uses short codes to navigate through it.
 
 
 ## Author name
