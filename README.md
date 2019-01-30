@@ -32,10 +32,13 @@ Python 3.6
 ## Behaviour driven development
 | Behaviour   |      Input     |  Output |
 |----------|:-------------:|------:|
-| Display codes for navigation| In terminal: $./p_locker.py |   Welcome, please enter your name |
-| Display prompt for creating an account | Enter: cc |   Enter your first name, last name and password |
-| Display prompt for creating a credential | Enter: cc |   Enter the site name, your username and password |
-| Display a list of credentials | Enter: dc |   Prints a list of saved credentials |
+| Display codes for navigation| In terminal: $./display.py |   Welcome to password_locker |
+| Display prompt for creating an account | Enter: cc |   Enter your username and password |
+| Display prompt for signing in | Enter: ss |   Enter your username and password |
+| Display prompt for adding new password | Enter: ad |   Enter your website and password |
+| Viewing passwords | Enter: ss |   Display saved passwords |
+| Display prompt for copying password to clipboard| Enter: cp |   Enter index of the password you want to copy |
+| log out | Enter: lo |   log out of the app |
 | Exit application | Enter: ex |   Exit the current navigation stage |
 
 

@@ -1,77 +1,111 @@
-import unittest
-import random
-from user import User
+from p_locker import Credentials,UsersData
+import unittest, pyperclip
 
-class TestUser(unittest.TestCase):
-
+class TestCredentials(unittest.TestCase):
     '''
-    Test class that defines test cases for the user class behaviours.
-
-    Argumentss:
-        unittest.TestCase: TestCase class that helps in creating test cases
+    Test class that defines the test cases for creating and authenticating credentials
     '''
-    # Items up here .......
-
     def setUp(self):
         '''
-        Set up method to run before each test cases.
+        Setting up the structure before each test
         '''
-        self.new_user = User("Instagram", "lex", "45678") # create user object
+        self.new_user = Credentials(1,"richie","uiui")
 
+    def tearDown(self):
+        '''
+        Cleans up after each test has run
+        '''
+        Credentials.users_list = []
 
     def test_init(self):
         '''
-        test_init test case to test if the object is initialized properly
+        Test case to test if the case has been initialized properly
         '''
+        self.assertEqual(self.new_user.identify,1)
+        self.assertEqual(self.new_user.user_name,"richie")
+        self.assertEqual(self.new_user.password,"uiui")
 
-        self.assertEqual(self.new_user.account,"Instagram")
-        self.assertEqual(self.new_user.username,"lex")
-        self.assertEqual(self.new_user.password,"45678")
-    def test_save_multiple_user(self):
-            '''
-            test_save_multiple_contact to check if we can save multiple user
-            objects to our contact_list
-            '''
-            self.new_user.save_user()
-            test_user = User("Instagram", "lex", "45678") # new user
-            test_user.save_user()
-            # test_user.save_contact()
-            self.assertEqual(len(User.user_list),2)
-# setup and class creation up here
+    def test_create(self):
+        '''
+        Testing if the new credential is saved into the list
+        '''
+        self.new_user.create_account()
+        self.assertEqual(len(Credentials.users_list),1)
+
+    def test_authenticate(self):
+        '''
+        Testing to check if the authenticate function can sign in a user properly
+        '''
+        self.new_user.create_account()
+        test_account = Credentials(1,"Test","Password")
+        test_account.create_account()
+
+        found_user = Credentials.authenticate_account("Test","Password")
+        self.assertEqual(found_user.identify , test_account.identify)
+
+class TestUserData(unittest.TestCase):
+    '''
+    Test class that defines the test cases for creating websites log in credentials
+    '''
+    def setUp(self):
+        '''
+        Setting up the structure before each test
+        '''
+        self.new_data = UsersData(1,1,"facebook.com","poiii")
+
     def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            User.user_list = []
+        '''
+        Cleans up the test after test is complete
+        '''
+        UsersData.data_list = []
 
-    def test_save_user(self):
-        self.new_user.save_user()
-        self.assertEqual(len(User.user_list),1)
+    def test_init(self):
+        '''
+        Test case to evaluate if the case has been initialized properly
+        '''
+        self.assertEqual(self.new_data.ident,1)
+        self.assertEqual(self.new_data.data_id,1)
+        self.assertEqual(self.new_data.website,"facebook.com")
+        self.assertEqual(self.new_data.web_key,"poiii")
 
-    def test_delete_user(self):
-        self.new_user.save_user()
-        test_user = User("Instagram", "lex", "45678")
-        test_user.save_user()
+    def test_add_password(self):
+        '''
+        Testing if the new website and password can be saved
+        '''
+        self.new_data.add_password()
+        self.assertEqual(len(UsersData.data_list),1)
 
-        self.new_user.delete_user()
-        self.assertEqual(len(User.user_list), 1)
-        #---------------------------------------------------------------------------------
-    def test_find_user_by_account(self):
+    def test_display_data(self):
+        '''
+        Testing if the data can be displayed.
+        '''
+        self.new_data.add_password()
+        test_data = UsersData(1,1,"facebook.com","poiii")
+        test_data.add_password()
 
-        self.new_user.save_user()
-        test_user = User("Instagram", "lex", "45678")
-        test_user.save_user()
+        data_found = UsersData.display_data(1,1)
+        self.assertEqual(data_found.website,test_data.website)
 
-        found_user = User.find_by_account("Instagram")
+    def test_data_exists(self):
+        '''
+        Testing to check if the function for checking data works well
+        '''
+        self.new_data.add_password()
+        test_data = UsersData(1,1,"facebook.com","poiii")
+        test_data.add_password()
 
-        self.assertEqual(found_user.username, test_user.username)
-    def test_user_exists(self):
-        self.new_user.save_user()
-        test_user = User("Instagram", "lex", "45678")
-        test_user.save_user()
+        data_exists = UsersData.existing_data(1)
+        self.assertTrue(data_exists)
 
-        user_exists = User.user_exist("Instagram")
+    def test_copy_password(self):
+        '''
+        Testing if the copy password function works
+        '''
+        self.new_data.add_password()
+        UsersData.copy_password(1,1)
 
-        self.assertTrue(user_exists)
-    def test_display_all_users(self):
-        self.assertEqual(User.display_users(), User.user_list)
+        self.assertEqual(self.new_data.web_key,pyperclip.paste())
+
+
+if __name__ == "__main__":
+    unittest.main()
