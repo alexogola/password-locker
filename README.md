@@ -39,7 +39,7 @@ Python 3.6
 | Viewing passwords | Enter: ss |   Display saved passwords |
 | Display prompt for copying password to clipboard| Enter: cp |   Enter index of the password you want to copy |
 | log out | Enter: lo |   log out of the app |
-| Exit application | Enter: ex |   Exit the current navigation stage |
+| Exit application | Enter: ex |   Exit the application |
 
 
 ## License
