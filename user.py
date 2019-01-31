@@ -99,7 +99,6 @@ def main():
                 print("Invalid username and/or password")
                 print("-"*27)
             elif get_result!=0:
-                # print(f"{get_result.identify} has logged in")
                 print("\n")
                 print(f"Welcome {get_result.user_name}! What would you like to do?")
                 while True:
