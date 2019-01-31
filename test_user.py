@@ -9,7 +9,7 @@ class TestCredentials(unittest.TestCase):
         '''
         Setting up the structure before each test
         '''
-        self.new_user = Credentials(1,"richie","uiui")
+        self.new_user = Credentials(1,"lex","pass")
 
     def tearDown(self):
         '''
@@ -22,8 +22,8 @@ class TestCredentials(unittest.TestCase):
         Test case to test if the case has been initialized properly
         '''
         self.assertEqual(self.new_user.identify,1)
-        self.assertEqual(self.new_user.user_name,"richie")
-        self.assertEqual(self.new_user.password,"uiui")
+        self.assertEqual(self.new_user.user_name,"lex")
+        self.assertEqual(self.new_user.password,"pass")
 
     def test_create(self):
         '''
@@ -51,7 +51,7 @@ class TestUserData(unittest.TestCase):
         '''
         Setting up the structure before each test
         '''
-        self.new_data = UsersData(1,1,"facebook.com","poiii")
+        self.new_data = UsersData(1,1,"instagram.com","secret")
 
     def tearDown(self):
         '''
@@ -65,8 +65,8 @@ class TestUserData(unittest.TestCase):
         '''
         self.assertEqual(self.new_data.ident,1)
         self.assertEqual(self.new_data.data_id,1)
-        self.assertEqual(self.new_data.website,"facebook.com")
-        self.assertEqual(self.new_data.web_key,"poiii")
+        self.assertEqual(self.new_data.website,"instagram.com")
+        self.assertEqual(self.new_data.web_key,"secret")
 
     def test_add_password(self):
         '''
@@ -80,7 +80,7 @@ class TestUserData(unittest.TestCase):
         Testing if the data can be displayed.
         '''
         self.new_data.add_password()
-        test_data = UsersData(1,1,"facebook.com","poiii")
+        test_data = UsersData(1,1,"instagram.com","secret")
         test_data.add_password()
 
         data_found = UsersData.display_data(1,1)
@@ -91,7 +91,7 @@ class TestUserData(unittest.TestCase):
         Testing to check if the function for checking data works well
         '''
         self.new_data.add_password()
-        test_data = UsersData(1,1,"facebook.com","poiii")
+        test_data = UsersData(1,1,"instagram.com","secret")
         test_data.add_password()
 
         data_exists = UsersData.existing_data(1)
