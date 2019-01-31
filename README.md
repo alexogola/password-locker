@@ -32,7 +32,7 @@ Python 3.6
 ## Behaviour driven development
 | Behaviour   |      Input     |  Output |
 |----------|:-------------:|------:|
-| Display codes for navigation| In terminal: $./user.py |   Welcome to password_locker |
+| Display codes for navigation| In terminal: $./display.py |   Welcome to password_locker |
 | Display prompt for creating an account | Enter: cc |   Enter your username and password |
 | Display prompt for signing in | Enter: ss |   Enter your username and password |
 | Display prompt for adding new password | Enter: ad |   Enter your website and password |
